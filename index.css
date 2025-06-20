@@ -1,0 +1,293 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'BookkGothic';
+}
+
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+@font-face {
+    font-family: 'BookkGothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkGothic-Bd.woff2') format('woff2');
+    font-weight: lighter;
+}
+
+a {
+    color: black;
+    font-family: 'BookkGothic';
+    text-decoration: none;
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.container img {
+    transition: opacity 0.5s;
+}
+
+.ment {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 5%;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+.ment1 {
+    align-self: flex-end;
+    /* 오른쪽 정렬 */
+    text-align: right;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.ment2 {
+    align-self: flex-start;
+    /* 왼쪽 정렬 */
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    color: #efefef;
+    font-weight: 100;
+}
+
+.or {
+    position: absolute;
+    bottom: 31%;
+}
+
+.coffee1 img {
+    width: 8vh;
+}
+
+.tea1 img {
+    width: 8vh;
+}
+
+.bel1 img {
+    width: 4vh;
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+
+}
+
+.bel2 img {
+    width: 3vh;
+    top: 20%;
+    right: 20%;
+    position: absolute;
+}
+
+.bel a.fainted {
+    transform: rotate(90deg) scale(0.8);
+    opacity: 0.4;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.notice {
+    position: fixed;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'BookkGothic';
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.notice.show {
+    opacity: 1;
+}
+
+/* 메뉴 */
+.menulogo img {
+    width: 10vh;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
+.menuin {
+    position: absolute;
+    top: 23%;
+    right: 10%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    font-family: 'BookkGothic';
+    z-index: 100;
+
+}
+
+.menuin a {
+    font-family: 'BookkGothic';
+}
+
+.menuin h3 {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 80px;
+    font-size: 1.5rem;
+    /* 필요하면 크기도 조정 */
+    line-height: 1;
+    /* 줄간격도 조정하면 밀집된 느낌 가능 */
+    margin: 10px 0;
+    /* 위아래 여백을 줄임 (기본은 약 1em 정도) */
+    text-align: center;
+}
+
+.menuin.show {
+    max-height: 300px;
+    /* 필요한 높이만큼 조절 */
+    opacity: 1;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 100;
+    font-family: 'BookkGothic-Bd';
+}
+
+/* 다크모드 */
+body.dark-mode {
+    background-color: black;
+    color: white;
+    background-image: url('./img/bg1.jpg'); /* 다크 모드 배경 이미지 */
+    background-size: cover;
+}
+
+body.dark-mode .ment1 {
+    color: #ffffff;
+    opacity: 0.3;
+}
+
+body.dark-mode .ment2 {
+    color: white;
+}
+
+body.dark-mode .bel img {
+    filter: invert(1);
+}
+
+body.dark-mode .menulogo img {
+    filter: invert(1);
+}
+
+body.dark-mode .home-button img {
+    filter: invert(1);
+}
+
+body.dark-mode .menuin a {
+    background-color: #ffffff;
+    /* 다크 배경 */
+    color: #000000;
+    /* 흰 텍스트 */
+}
+
+body.dark-mode .menuin a h3 {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+body.dark-mode .menuin a:hover {
+    background-color: #ffffff;
+}
+
+/* 불투명 처리 */
+.dimmed {
+    opacity: 0.3;
+}
+
+@media (max-width: 767px) {
+
+    .ment {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 3%;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        flex-direction: column;
+        /* 모바일에서는 세로 정렬이 더 자연스러움 */
+    }
+
+    .ment1 {
+        align-self: flex-end;
+        /* 오른쪽 정렬 */
+        text-align: right;
+        width: 100%;
+        white-space: normal;
+        /* 줄바꿈 허용 */
+        word-break: break-word;
+        /* 단어 단위 줄바꿈 */
+    }
+
+    .ment2 {
+        align-self: flex-start;
+        /* 왼쪽 정렬 */
+        text-align: left;
+        width: 100%;
+        color: #efefef;
+        font-weight: 100;
+        white-space: normal;
+        /* 줄바꿈 허용 */
+        word-break: break-word;
+        /* 단어 단위 줄바꿈 */
+    }
+
+    .menuin h3 {
+        color: #ffffff;
+        background-color: #000000;
+        padding: 10px 20px;
+        border-radius: 80px;
+        font-size: 1.5rem;
+        /* 필요하면 크기도 조정 */
+        line-height: 1;
+        /* 줄간격도 조정하면 밀집된 느낌 가능 */
+        margin: 8px 0;
+        /* 위아래 여백을 줄임 (기본은 약 1em 정도) */
+        text-align: center;
+    }
+
+    .or {
+        position: absolute;
+        bottom: 20%;
+    }
+    body.dark-mode {
+    background-image: url('./img/bg2.jpg'); /* 다크 모드 배경 이미지 */
+    background-size: cover;
+}
+.notice {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+}
+
+}
